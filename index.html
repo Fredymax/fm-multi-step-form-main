@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png" />
+    <title>Frontend Mentor | Multi-step form</title>
+    <link rel="stylesheet" href="./css/app.css" />
+    <script src="./js/app.js" defer></script>
+    <!-- https://www.tiktok.com/@iitss.july/video/7225367910498323738 -->
+  </head>
+  <body>
+    <div class="container">
+      <div class="step__list">
+        <div class="step__item">
+          <button class="step__button">1</button>
+          <p class="step__description">
+            <span>STEP 1</span>
+            <strong>Your info</strong>
+          </p>
+        </div>
+        <div class="step__item">
+          <button class="step__button">2</button>
+          <p class="step__description">
+            <span>Step 2</span>
+            <strong>Select plan</strong>
+          </p>
+        </div>
+        <div class="step__item">
+          <button class="step__button">3</button>
+          <p class="step__description">
+            <span>STEP 3</span>
+            <strong>Add-ons</strong>
+          </p>
+        </div>
+        <div class="step__item">
+          <button class="step__button">4</button>
+          <p class="step__description">
+            <span>STEP 4</span>
+            <strong>Summary</strong>
+          </p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card__body">
+          <div class="card__content" id="slider-steps">
+            <div class="step__content">
+              <h1 class="card__title">Personal Info</h1>
+              <p class="card__text">Please provide your name, email address, and phone number.</p>
+              <form class="form" id="form-personal" autocomplete="off">
+                <div class="form__group">
+                  <label for="name" class="label__text">Name</label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    class="form__control"
+                    placeholder="e.g. Stephen King"
+                    pattern="^[a-zA-Z\s]+$"
+                  />
+                </div>
+                <div class="form__group">
+                  <label for="email_address" class="label__text">Email Address</label>
+                  <input
+                    type="email"
+                    inputmode="email"
+                    id="email_address"
+                    name="email_address"
+                    class="form__control"
+                    placeholder="e.g. stephenking@lorem.com"
+                    pattern="[a-zA-Z0-9_\-]+@[a-zA-Z0-9_\-]+.[a-zA-Z]{2,}$"
+                  />
+                </div>
+                <div class="form__group">
+                  <label for="phone_number" class="label__text">Phone Number</label>
+                  <input
+                    type="text"
+                    id="phone_number"
+                    name="phone_number"
+                    class="form__control"
+                    placeholder="e.g. +1 234 567 890"
+                    inputmode="numeric"
+                    pattern="^\+?[0-9]{2}\s?[0-9?\s]{9,11}"
+                  />
+                </div>
+              </form>
+            </div>
+
+            <div class="step__content">
+              <h1 class="card__title">Select your plan</h1>
+              <p class="card__text">You have the option of monthly or yearly billing.</p>
+              <form action="" id="plan" class="form select__your__plan">
+                <div class="form__group">
+                  <label for="arcade" class="label__option">
+                    <figure class="option__figure">
+                      <img src="./assets/images/icon-arcade.svg" width="40px" class="option__img" />
+                    </figure>
+                    <div class="option__content">
+                      <span>Arcade</span>
+                      <span>
+                        $<span class="plan_amount">9</span>/<span class="abbr_period">mo</span>
+                      </span>
+                      <span></span>
+                    </div>
+                  </label>
+                  <input
+                    type="radio"
+                    class="input__checkbox"
+                    name="plan"
+                    value="arcade"
+                    id="arcade"
+                  />
+                </div>
+                <div class="form__group">
+                  <label for="advanced" class="label__option">
+                    <figure class="option__figure">
+                      <img
+                        src="./assets/images/icon-advanced.svg"
+                        width="40px"
+                        class="option__img"
+                      />
+                    </figure>
+                    <div class="option__content">
+                      <span>Advanced</span>
+                      <span>
+                        $<span class="plan_amount">12</span>/<span class="abbr_period">mo</span>
+                      </span>
+                      <span></span>
+                    </div>
+                  </label>
+                  <input
+                    type="radio"
+                    class="input__checkbox"
+                    name="plan"
+                    value="advanced"
+                    id="advanced"
+                  />
+                </div>
+                <div class="form__group">
+                  <label for="pro" class="label__option">
+                    <figure class="option__figure">
+                      <img src="./assets/images/icon-pro.svg" width="40px" class="option__img" />
+                    </figure>
+                    <div class="option__content">
+                      <span>Pro</span>
+                      <span>
+                        $<span class="plan_amount">15</span>/<span class="abbr_period">mo</span>
+                      </span>
+                      <span></span>
+                    </div>
+                  </label>
+                  <input type="radio" class="input__checkbox" name="plan" value="pro" id="pro" />
+                </div>
+                <div class="form__group">
+                  <div class="period">
+                    <span>Monthly</span>
+                    <div class="switch__option">
+                      <label for="period" class="switch"></label>
+                      <input type="checkbox" id="period" name="period" class="input__checkbox" />
+                    </div>
+                    <span>Yearly</span>
+                  </div>
+                </div>
+              </form>
+            </div>
+
+            <div class="step__content">
+              <h1 class="card__title">Pick add-ons</h1>
+              <p class="card__text">Add-ons help enhance your gaming experience.</p>
+              <form action="" id="pick-add-ons" class="form pick_add_ons">
+                <div class="form__group">
+                  <input
+                    type="checkbox"
+                    class="input__checkbox"
+                    name="add_ons"
+                    value="online_service"
+                    id="online_service"
+                  />
+                  <label for="online_service" class="label__checkbox">
+                    <div class="check_container"></div>
+                    <div class="checkbox__content">
+                      <span>Online service</span>
+                      <span>Access to multiplayer games</span>
+                    </div>
+                    <span>
+                      +$<span class="plan_amount">1</span>/<span class="abbr_period">mo</span>
+                    </span>
+                  </label>
+                </div>
+
+                <div class="form__group">
+                  <input
+                    type="checkbox"
+                    class="input__checkbox"
+                    name="add_ons"
+                    value="larger_storage"
+                    id="larger_storage"
+                  />
+                  <label for="larger_storage" class="label__checkbox">
+                    <div class="check_container"></div>
+                    <div class="checkbox__content">
+                      <span>Larger storage</span>
+                      <span>Extra 1TB of cloud save</span>
+                    </div>
+                    <span>
+                      +$<span class="plan_amount">2</span>/<span class="abbr_period">mo</span>
+                    </span>
+                  </label>
+                </div>
+
+                <div class="form__group">
+                  <input
+                    type="checkbox"
+                    class="input__checkbox"
+                    name="add_ons"
+                    value="customizable_profile"
+                    id="customizable_profile"
+                  />
+                  <label for="customizable_profile" class="label__checkbox">
+                    <div class="check_container"></div>
+                    <div class="checkbox__content">
+                      <span>Customizable Profile</span>
+                      <span>Custom theme on your profile</span>
+                    </div>
+                    <span>
+                      +$<span class="plan_amount">2</span>/<span class="abbr_period">mo</span>
+                    </span>
+                  </label>
+                </div>
+              </form>
+            </div>
+
+            <div class="step__content">
+              <h1 class="card__title">Finishing up</h1>
+              <p class="card__text">Double-check everything looks OK before confirming.</p>
+              <div class="description">
+                <div class="description__list">
+                  <div class="description__item">
+                    <div class="title">
+                      <p>
+                        <span id="plan-name" style="text-transform: capitalize">Arcade</span>
+                        (<span id="plan-period">Mounthly</span>)
+                      </p>
+                      <a href="javascript:;" id="change-plan">Change</a>
+                    </div>
+                    <div class="price">
+                      $/<span id="plan-price">9</span> <span class="abbr_period">mo</span>
+                    </div>
+                  </div>
+                  <div id="list-items"></div>
+                </div>
+                <div class="description__price">
+                  <p>Total</p>
+                  <span>$<span id="total-amount">0</span>/<span class="abbr_period">mo</span></span>
+                </div>
+              </div>
+            </div>
+
+            <div class="step__content">
+              <section class="thank__you">
+                <div class="card__text">
+                  <figure>
+                    <img src="./assets/images/icon-thank-you.svg" alt="" />
+                  </figure>
+                  <h3>Thank you!</h3>
+                  <p>
+                    Thanks for confirming your subscription! We hope you have fun using our
+                    platform. If you ever need support, please feel free to email us at
+                    support@loremgaming.com.
+                  </p>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer__buttons">
+        <button class="button button__back">Go Back</button>
+        <button class="button button__next" disabled>Next Step</button>
+        <button class="button button__confirm">Confirm</button>
+      </div>
+    </div>
+  </body>
+</html>
